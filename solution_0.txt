@@ -1,0 +1,25 @@
+// TASK #1.
+//Finish convert function to parse and print year, month, day, hour, minute, seconds and
+//millis from provided data.
+
+//Input: date in a string.  Like: 2018-08-13 17.00.05:542;
+//Expected output from a function in console:
+//Current time is 17 hours, 00 min, 05 sec & 542 millis. Date: 13/08/2018.
+
+function convert(input){
+	var year = input.split("-")[0];
+	var month = input.split("-")[1].split("-")[0];
+	var day = input.split("-")[1].split("-")[1].split(" ")[0];
+	var hour = input.split("-")[1].split("-")[1].split(" ")[1].split(".")[0];
+	var minute = input.split("-")[1].split("-")[1].split(" ")[1].split(".")[1].split(".")[0];
+	var sec = input.split("-")[1].split("-")[1].split(" ")[1].split(".")[1].split(".")[1].split(":")[0];
+	var mills = input.split("-")[1].split("-")[1].split(" ")[1].split(".")[1].split(".")[1].split(":")[1];
+	
+	var output = `Current time is $hour hours, $minute min, $sec sec & $mills millis. Date: $day/$month/$year.`;
+
+       //your solution should be here
+
+	return output;
+}
+
+console.log(convert('2018-08-13 17.00.05:542'));
